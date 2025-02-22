@@ -11,38 +11,38 @@ const Header = () => {
     sethamburger(!hamburger);
   };
   return (
-    <header className="container ">
-      {/*close NAV is main div  */}
-      <nav className="flex flex-wrap justify-between p-2 items-center bg-dark lg:pl-14 lg:pr-20">
+    <header className="container mx-auto font-poppins font-semibold ">
+      {/*close NAV is main div */}
+      <nav className="flex flex-wrap justify-between p-2  items-center bg-dark lg:pl-14 lg:pr-20  2xl:py-4 rounded-s-lg rounded-r-lg">
         {/* LOGO and HAMBURGER --parent */}
-        <div className="flex justify-between w-full lg:w-auto bg-black items-center">
-          <img className="w-11 " src={vector} alt="Logo" />
+        <div className="flex justify-between w-full lg:w-auto items-center">
+          <img className="w-12 sm:w-16 md:w-1/12 lg:w-3/4 " src={vector} alt="Logo" />
           <FontAwesomeIcon
-            className="text-2xl lg:hidden text-white ml-auto"
+            className="text-3xl sm:text-5xl lg:hidden text-white ml-auto"
             onClick={toggleMenu}
             icon={faBars}
           />
         </div>
         {/* close LOGO and HAMBURGER --parent */}
-
-        {/* open List and BUTTOn div  */}
+        {/* lg:w-3/4 */}
+        {/* open List and BUTTOn div */}
         <div
-          className={`bg-light w-full  p-3 mt-2 text-lg space-y-2 rounded-md lg:w-4/5 lg:flex justify-between lg:p-0 lg:mt-0 lg:space-y-0 ${
+          className={`bg-light w-full lg:w-9/12 xl:w-4/6 2xl:w-4/6 py-8 mt-2 text-lg sm:text-2xl lg:text-sm space-y-2 sm:space-y-6 rounded-md lg:flex justify-between lg:p-0 lg:mt-0 lg:space-y-0 ${
             hamburger ? "block" : "hidden"
           }`}
         >
-          <ul className="text-center space-y-2 lg:flex justify-between lg:space-x-16 items-center lg:space-y-0">
+          <ul className="text-center space-y-2 sm:space-y-6 lg:flex justify-between lg:space-x-16 items-center lg:space-y-0">
             <li>ABOUT US</li>
             <li>OUR PRODUCTS</li>
             <li>CONTACT US</li>
           </ul>
-          <div className="space-x-10 text-center ">
+          <div className="space-x-10 lg:space-x-5 text-center ">
             <button className="bg-white p-2 rounded-full">LOGIN</button>
             <button className="bg-yellow p-2 rounded-full">
               Sign Up Now <FontAwesomeIcon icon={faArrowRight} />
             </button>
           </div>
-          {/* close List and BUTTOn div  */}
+          {/* close List and BUTTOn div */}
         </div>
       </nav>
     </header>
