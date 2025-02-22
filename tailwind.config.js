@@ -13,7 +13,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: "#4D1BB6", // Yeh tumhara custom color hai
+        dark: "#4D1BB6",
+        light: "#EEE8F8",
+        yellow: "#EBD61D",
+        // light: "#EEE8F8",
       },
     },
   },
