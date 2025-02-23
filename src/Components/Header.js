@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faBars } from "@fortawesome/free-solid-svg-icons";
 // Images
-import vector from "../assets/images/Vector.png";
+import Logo from "../assets/images/Logo.png";
 
 const Header = () => {
   const [hamburger, sethamburger] = useState(false);
@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex justify-between w-full lg:w-auto items-center ">
           <img
             className="w-12 sm:w-16 md:w-1/12 lg:w-3/4 cursor-pointer"
-            src={vector}
+            src={Logo}
             alt="Logo"
           />
           <FontAwesomeIcon

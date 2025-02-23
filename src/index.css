@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Prompt";
 }
 
 code {
@@ -12,6 +13,9 @@ code {
     monospace;
 }
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap');
+
 
 @tailwind base;
 @tailwind components;
