@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
+import Who from "./Components/Who";
 import "./App.css";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <React.Fragment>
       <Header />
       <Hero />
+      <Who />
     </React.Fragment>
   );
 }
