@@ -21,8 +21,8 @@ const Hero = () => {
           </button>
         </div>
         {/* second Div */}
-        <div className="lg:w-2/4 d-flex justify-center lg:py-10">
-          <img className="w-3/4 lg:w-auto" src={Hero_img} />
+        <div className="lg:w-2/4 d-flex justify-center  lg:py-10">
+          <img className="w-3/4 lg:w-auto m-auto" src={Hero_img} />
         </div>
       </div>
     </section>

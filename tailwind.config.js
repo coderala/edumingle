@@ -14,7 +14,9 @@ export const theme = {
     colors: {
       dark: "#4D1BB6",
       light: "#EEE8F8",
-      yellow: "#EBD61D",
+      low_light: "#FFF8F8",
+      yellow: "#EBD61D ",
+      second_yellow: "#ECDD6F ",
     },
     fontFamily: {
       poppins: ["Poppins", "serif"],

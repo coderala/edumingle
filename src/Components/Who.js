@@ -6,7 +6,7 @@ import Who_bg_line from "../assets/images/Who_bg_line.png";
 
 const Who = () => {
   return (
-    <div className="relative p-5 lg:py-20 xl: ">
+    <div className="relative p-5 lg:py-20">
       <div className=" relative text-center z-10 space-y-2 xl:space-y-5  lg:w-4/6 xl:w-9/12 mx-auto  ">
         {/* <div class="flex justify-center items-center gap-6 mt-4"></div> */}
         <h1 className="text-dark text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10 ">
