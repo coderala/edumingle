@@ -8,19 +8,20 @@
 // }
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {
-      colors: {
-        dark: "#4D1BB6",
-        light: "#EEE8F8",
-        yellow: "#EBD61D",
-      },
-      fontFamily: {
-        poppins: ["Poppins", "serif"], 
-      },
+export const content = ["./src/**/*.{js,jsx,ts,tsx}"];
+export const theme = {
+  extend: {
+    colors: {
+      dark: "#4D1BB6",
+      light: "#EEE8F8",
+      low_light: "#FFF8F8",
+      yellow: "#EBD61D ",
+      second_yellow: "#ECDD6F ",
+    },
+    fontFamily: {
+      poppins: ["Poppins", "serif"],
+      prompt: ["Prompt", "serif"],
     },
   },
-  plugins: [],
 };
+export const plugins = [];
