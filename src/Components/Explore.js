@@ -38,6 +38,8 @@ const ExploreCollection = () => {
   };
 
   return (
+    <div>
+       <h1 className="bg-red-500 text-white text-4xl text-center p-5">After all work create a slider is temprary</h1>
     <div className="flex items-center justify-center bg-yellow-300 p-10 rounded-xl container mx-auto bg-second_yellow">
       {/* Left Section */}
       <div className="w-1/3 pr-8">
@@ -76,7 +78,7 @@ const ExploreCollection = () => {
           </button>
         )}
       </div>
-    </div>
+    </div></div>
   );
 };
 

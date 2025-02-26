@@ -12,7 +12,7 @@ const Who = () => {
         <h1 className="text-dark text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10 ">
           Why EduMingle?
         </h1>
-        <p className="text-lg sm:text-2xl lg:text-xs 2xl:text-sm lg:w-4/5 xl:w-8/12 xl:px-8 2xl:px-12 mx-auto  bg-gray-300">
+        <p className="text-lg sm:text-2xl lg:text-xs 2xl:text-sm lg:w-4/5 xl:w-8/12 xl:px-8 2xl:px-12 mx-auto  ">
           Lorem ipsum is simply dummy text of the printing and typesetting
           industry.Lorem ipsum has been the industry's
         </p>

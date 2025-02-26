@@ -15,7 +15,7 @@ function App() {
       <Who />
       <Explore />
       <Why />
-      <cards />
+      <Cards />
     </React.Fragment>
   );
 }
