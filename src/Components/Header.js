@@ -31,7 +31,7 @@ const Header = () => {
 
         {/* open List and BUTTOn div */}
         <div
-          className={` bg-light lg:bg-transparent w-full lg:w-10/12 xl:w-10/12 2xl:pl-10 py-8 mt-2 text-lg sm:text-2xl lg:text-sm xl:text-lg 2xl:text-2xl space-y-2 sm:space-y-6 rounded-md lg:flex justify-between lg:p-0 lg:mt-0 lg:space-y-0 ${
+          className={` bg-light lg:bg-transparent w-full lg:w-9/12 xl:w-10/12 2xl:pl-60 py-8 mt-2 text-lg sm:text-2xl lg:text-xs   2xl:text-sm space-y-2 sm:space-y-6 rounded-md lg:flex justify-between lg:p-0 lg:mt-0 lg:space-y-0 ${
             hamburger ? "block" : "hidden"
           }`}
         >
@@ -41,11 +41,11 @@ const Header = () => {
             <li>CONTACT US</li>
           </ul>
           <div className="space-x-10 lg:space-x-5 text-center ">
-            <button className="bg-white py-2 px-4 lg:py-3 lg:px-10 rounded-full">
+            <button className="bg-white py-2 px-4 lg:py-3 lg:px-6 rounded-full">
               LOGIN
             </button>
 
-            <button className="bg-yellow py-2 px-4 lg:py-3 lg:px-10 rounded-full font-semibold ">
+            <button className="bg-yellow py-2 px-4 lg:py-3 lg:px-6 rounded-full  ">
               Sign Up Now
               <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
             </button>
