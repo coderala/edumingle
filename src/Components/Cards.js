@@ -27,7 +27,7 @@ const Cards = () => {
                 </h1>
                 <img src={Vector_one} className="h-14 sm:h-24 lg:h-16 xl:h-20" />
               </div>
-              {/* Paragraph  */}
+              {/* Paragraph   */}
               <p className="font-poppins sm:text-2xl md:text-3xl lg:text-xl xl:text-2xl mt-3">
               We prioritize quality in every product to ensure they stand the
               test of time.
