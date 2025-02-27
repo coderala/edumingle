@@ -24,7 +24,7 @@ export const theme = {
     },
     fontFamily: {
       poppins: ["Poppins", "serif"],
-      prompt: ["Prompt", "serif"],
+      prompt: ["Prompt", "sans-serif"],
     },
   },
 };
