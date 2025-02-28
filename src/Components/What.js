@@ -8,14 +8,8 @@ const Who = () => {
   return (
     <div className="relative p-5 lg:py-20 container mx-auto">
       <div className=" relative text-center z-10 space-y-2 xl:space-y-5  lg:w-4/6 xl:w-9/12 mx-auto  ">
-        {/* <div class="flex justify-center items-center gap-6 mt-4"></div> */}
-        <h1 className="text-dark text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold">
-          Why EduMingle?
-        </h1>
-        <p className="text-lg sm:text-2xl lg:text-xs 2xl:text-sm lg:w-4/5 xl:w-8/12 xl:px-8 2xl:px-12 mx-auto  ">
-          Lorem ipsum is simply dummy text of the printing and typesetting
-          industry.Lorem ipsum has been the industry's
-        </p>
+       
+       <h1 className="bg-red-500 text-white text-4xl"> after makeing slider</h1>
       </div>
       <div className="flex top-20 ">
         <img

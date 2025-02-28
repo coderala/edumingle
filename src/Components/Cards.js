@@ -15,7 +15,7 @@ const Cards = () => {
         {/* lg size parent  */}
         <div className="lg:flex justify-between">
           {/* first card  */}
-          <main className="bg-light_blue flex p-2 sm:px-5  m-2 xl:m-5 rounded-xl lg:w-1/2 sm:h-70 2xl:p-5">
+          <main className="bg-light_blue flex p-2 sm:px-5  m-2 xl:m-5 xl:mt-0 rounded-xl lg:w-1/2 sm:h-70 2xl:p-5">
              {/* Number  */}
             <img src={One} className="h-36 sm:h-60 lg:h-52 2xl:h-64" />
 
@@ -35,7 +35,7 @@ const Cards = () => {
             </div>
           </main>
           {/* Second card  */}
-          <main className="bg-light_purple flex p-2 sm:px-5  m-2 xl:m-5 rounded-xl lg:w-1/2 sm:h-70 2xl:p-5">
+          <main className="bg-light_purple flex p-2 sm:px-5  m-2 xl:m-5 xl:mt-0 rounded-xl lg:w-1/2 sm:h-70 2xl:p-5">
             {/* Number  */}
             <img src={Two} className=" h-36 sm:h-60 lg:h-52 2xl:h-64"  />
 
@@ -58,7 +58,7 @@ const Cards = () => {
         {/* lg second parent  */}
         <div className="lg:flex justify-between ">
           {/* Third card  */}
-          <main className="bg-light_orange flex p-2 sm:px-5  m-2 xl:m-5 rounded-xl lg:w-1/2 sm:h-70 2xl:p-5">
+          <main className="bg-light_orange flex p-2 sm:px-5  m-2 xl:m-5 xl:mt-0 rounded-xl lg:w-1/2 sm:h-70 2xl:p-5">
             {/* Number  */}
             <img src={Three} className="h-36 sm:h-60 lg:h-52 2xl:h-64" />
 
@@ -78,7 +78,7 @@ const Cards = () => {
             </div>
           </main>
           {/* Four card  */}
-          <main className="bg-light_green flex p-2 sm:px-5  m-2 xl:m-5 rounded-xl lg:w-1/2 sm:h-70 2xl:p-5" >
+          <main className="bg-light_green flex p-2 sm:px-5  m-2 xl:m-5 xl:mt-0 rounded-xl lg:w-1/2 sm:h-70 2xl:p-5" >
             {/* Number  */}
             <img src={Four} className="h-36 sm:h-60 lg:h-52 2xl:h-64" />
 
