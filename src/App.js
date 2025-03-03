@@ -8,6 +8,7 @@ import Cards from "./Components/Cards";
 import What from "./Components/What";
 import Stay from "./Components/Stay";
 import Have from "./Components/Have";
+import Footer from "./Components/Footer";
 import "./App.css";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <What />
       <Stay />
       <Have />
+      <Footer />
     </React.Fragment>
   );
 }
