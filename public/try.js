@@ -24,6 +24,7 @@ const Slider = () => {
     isDragging = true;
     startX = e.clientX;
   };
+            
 
   const handleMouseMove = (e) => {
     if (!isDragging) return;
