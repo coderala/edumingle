@@ -1,0 +1,7 @@
+{
+              "editor.experimentalWhitespaceRendering": "svg",
+              "editor.find.addExtraSpaceOnTop": true,
+              "editor.insertSpaces": true,
+"editor.tabSize": 16,
+"css.format.spaceAroundSelectorSeparator": false
+}
