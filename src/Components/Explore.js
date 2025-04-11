@@ -2,131 +2,132 @@ import React, { useState, useRef } from "react";
 import Sliderf from "../assets/images/Sliders.png";
 import Sliders from "../assets/images/Sliderf.png";
 import Slidert from "../assets/images/Slidert.png";
-
-const ExploreCollection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0); // Start from first slide
-  const [dragging, setDragging] = useState(false); // To track dragging
-  const startX = useRef(0); // Starting position of the drag
-  const offset = useRef(0); // Track the drag offset
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+const Slider = () => {
   const items = [
     {
       image: Sliderf,
       title: "Backpacks",
-      description: "Durable and stylish backpacks to carry your essentials."
+      description: "Durable and stylish backpacks to carry your essentials.",
     },
     {
       image: Sliders,
       title: "Stationery",
-      description: "Quality pens, notebooks, and organizers to keep you organized."
+      description:
+        "Quality pens, notebooks, and organizers to keep you organized.",
     },
     {
       image: Slidert,
       title: "Tech Accessories",
-      description: "Protective sleeves and chargers for your devices."
-    }
+      description: "Protective sleeves and chargers for your devices.",
+    },
   ];
+  const [index, setindex] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const touchway = (e) => {
+    return e.touches ? e.touches[0].clientX : e.clientX;
+  };
+  const startX = useRef(0);
+  // const offset = useRef(0);
 
-  const nextSlide = () => {
-    if (currentIndex < items.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
+  const Prev = () => {
+    setindex((i) => (i === 0 ? items.length - 1 : i - 1));
   };
 
-  const prevSlide = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
+  const Next = () => {
+    setindex((i) => (i === items.length - 1 ? 0 : i + 1));
   };
 
-  const handleMouseDown = (e) => {
+  const Down = (e) => {
     setDragging(true);
-    startX.current = e.clientX;
+    startX.current = touchway(e);
   };
 
-  const handleMouseMove = (e) => {
+  const Move = (e) => {
     if (!dragging) return;
 
-    let moveX = e.clientX - startX.current;
-    offset.current = moveX;
+    let moveX = touchway(e) - startX.current;
 
     if (moveX > 100) {
-      prevSlide();
-      setDragging(false); // Stop dragging after a certain threshold
+      Prev();
+      setDragging(false);
     } else if (moveX < -100) {
-      nextSlide();
-      setDragging(false); // Stop dragging after a certain threshold
+      Next();
+      setDragging(false);
     }
   };
 
-  const handleMouseUp = () => {
+  const Up = () => {
     setDragging(false);
   };
 
   return (
-    <div>
-      <h1 className="bg-red-500 text-white text-4xl text-center p-5">Explore Our Collection</h1>
-      <div className="flex items-center justify-center bg-yellow-300 p-10 rounded-xl container mx-auto">
-        {/* Left Section */}
-        <div className="w-1/3 pr-8">
-          <h2 className="text-4xl font-bold text-purple-700">Explore Our Collection</h2>
-          <p className="text-gray-600 mt-2">Designed for Every Student</p>
-          <button className="mt-4 px-4 py-2 bg-black text-white rounded-full">Browse All Products →</button>
-        </div>
+    <div className="bg-second_yellow lg:flex justify-center items-center">
+      {/* fisrt */}
+      <div className="lg:w-2/5 lg:my-auto font-poppins p-4 md:p-10 space-y-2 sm:space-y-6 ">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10 text-dark">
+          Explore Our Collection
+        </h1>
+        <p className=" text-lg sm:text-2xl lg:text-xs 2xl:text-sm lg:w-4/6 xl:pr-20 ">
+          Designed for Every student
+        </p>
+        <button className=" text-black py-2 px-4 lg:py-3 lg:px-8 rounded-full font-semibold text-lg sm:text-2xl lg:text-sm bg-white">
+          Browse All Product
+          <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
+        </button>
+      </div>
+      {/* second */}
+      <div className="flex  overflow-hidden">
+        {index !== 0 && (
+          <button onClick={Prev}>
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              className="p-2 sm:p-3 sm:text-2xl bg-dark text-white rounded-s-full lg:rounded-full"
+            />
+          </button>
+        )}
 
-        {/* Right Section - Slider */}
         <div
-          className="relative w-2/3 flex items-center overflow-hidden"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp} // Ensures dragging stops when the mouse leaves the container
+          className="overflow-hidden  align-items-center "
+          onMouseDown={Down}
+          onMouseMove={Move}
+          onMouseUp={Up}
+          onTouchStart={Down}
+          onTouchMove={Move}
+          onTouchEnd={Up}
         >
-          {/* Left Button */}
-          {currentIndex > 0 && (
-            <button 
-              onClick={prevSlide} 
-              className="absolute left-0 bg-purple-700 text-white p-2 rounded-full">
-              <i className="fa-solid fa-arrow-left"></i>
-            </button>
-          )}
-
-          {/* Slider Items */}
           <div
-            className="flex transition-transform duration-300"
-            style={{
-              transform: `translateX(-${currentIndex * 40}%)`, // Move 40% of the width per slide to show 2.5 slides
-              width: "100%", // Ensure the container's width spans the full available space
-            }}
+            className="w-[120%] flex   space-x-10 justify-between my-2 "
+            style={{ transform: `translateX(-${index * 100}%)` }}
           >
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className="min-w-[40%] mx-2 bg-white p-4 rounded-lg shadow-lg"
-                style={{
-                  opacity: 1, // No opacity effect, making slides fully visible
-                  transform: `scale(1)`, // No scaling, ensure normal size for all slides
-                  transition: "none", // No transition on scaling or opacity
-                }}
-              >
-                <img src={item.image} alt={item.title} className="w-full h-32 object-cover rounded-md" />
-                <h3 className="text-lg font-bold mt-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+            {items.map((i) => (
+              <div className="shrink-0 lg:shrink  text-center bg-light rounded-lg p-3 lg:p-3 sm:p-6 w-6/12">
+                <img
+                  src={i.image}
+                  className="bg-low_light   h-64 sm:h-96 lg:h-40  w-full m-auto rounded-md p-4"
+                />
+                <h2 className=" mt-2 text-2xl sm:text-5xl md:text-6xl lg:text-2xl  2xl:text-4xl font-prompt font-extrabold 2xl:space-y-10 ">
+                  {i.title}
+                </h2>
+                <p className=" text-lg sm:text-2xl lg:text-xs 2xl:text-sm  ">
+                  {i.description}
+                </p>
               </div>
             ))}
           </div>
-
-          {/* Right Button */}
-          {currentIndex < items.length - 1 && (
-            <button 
-              onClick={nextSlide} 
-              className="absolute right-0 bg-purple-700 text-white p-2 rounded-full">
-              <i className="fa-solid fa-arrow-right"></i>
-            </button>
-          )}
         </div>
+        {index !== items.length - 1 && (
+          <button onClick={Next}>
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="p-2 sm:p-3 sm:text-2xl bg-dark text-white rounded-e-full  lg:rounded-full"
+            />
+          </button>
+        )}
       </div>
     </div>
   );
 };
 
-export default ExploreCollection;
+export default Slider;

@@ -63,30 +63,33 @@ const Slider = () => {
   };
 
   return (
-    <div className="bg-second_yellow">
+    <div className="bg-second_yellow lg:flex justify-center items-center">
       {/* fisrt */}
-      <div className="lg:w-2/4 lg:my-auto font-poppins p-4 md:p-10 space-y-2 sm:space-y-6">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10">
+      <div className="lg:w-2/5 lg:my-auto font-poppins p-4 md:p-10 space-y-2 sm:space-y-6 ">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10 text-dark">
           Explore Our Collection
         </h1>
         <p className=" text-lg sm:text-2xl lg:text-xs 2xl:text-sm lg:w-4/6 xl:pr-20 ">
           Designed for Every student
         </p>
-        <button className="bg-black text-white py-2 px-4 lg:py-3 lg:px-8 rounded-full font-semibold text-lg sm:text-2xl lg:text-sm ">
+        <button className=" text-black py-2 px-4 lg:py-3 lg:px-8 rounded-full font-semibold text-lg sm:text-2xl lg:text-sm bg-white">
           Browse All Product
           <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
         </button>
       </div>
       {/* second */}
-      <div className="flex">
-        <button onClick={Prev}>
-          <FontAwesomeIcon
-            icon={faArrowLeft}
-            className=" p-1 bg-dark text-white rounded-s-full"
-          />
-        </button>
+      <div className="flex  overflow-hidden">
+        {index !== 0 && (
+          <button onClick={Prev}>
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              className="p-2 sm:p-3 sm:text-2xl bg-dark text-white rounded-s-full lg:rounded-full"
+            />
+          </button>
+        )}
+
         <div
-          className="overflow-hidden  align-items-center"
+          className="overflow-hidden  align-items-center "
           onMouseDown={Down}
           onMouseMove={Move}
           onMouseUp={Up}
@@ -95,31 +98,33 @@ const Slider = () => {
           onTouchEnd={Up}
         >
           <div
-            className="flex my-2"
+            className="w-[120%] flex   space-x-10 justify-between my-2 "
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
             {items.map((i) => (
-              <div className="w-full shrink-0 text-center bg-light rounded-lg p-3">
+              <div className="shrink-0 lg:shrink  text-center bg-light rounded-lg p-3 lg:p-3 sm:p-6 w-6/12">
                 <img
                   src={i.image}
-                  className="bg-low_light   h-64 w-full m-auto rounded-md p-4"
+                  className="bg-low_light   h-64 sm:h-96 lg:h-40  w-full m-auto rounded-md p-4"
                 />
-                <h2 className=" mt-2 text-2xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10 ">
+                <h2 className=" mt-2 text-2xl sm:text-5xl md:text-6xl lg:text-2xl  2xl:text-4xl font-prompt font-extrabold 2xl:space-y-10 ">
                   {i.title}
                 </h2>
-                <p className=" text-lg sm:text-2xl lg:text-xs 2xl:text-sm lg:w-4/6 xl:pr-20 ">
+                <p className=" text-lg sm:text-2xl lg:text-xs 2xl:text-sm  ">
                   {i.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
-        <button onClick={Next}>
-          <FontAwesomeIcon
-            icon={faArrowRight}
-            className="p-1 bg-dark text-white rounded-e-full"
-          />
-        </button>
+        {index !== items.length - 1 && (
+          <button onClick={Next}>
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="p-2 sm:p-3 sm:text-2xl bg-dark text-white rounded-e-full  lg:rounded-full"
+            />
+          </button>
+        )}
       </div>
     </div>
   );
