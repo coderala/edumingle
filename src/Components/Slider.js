@@ -1,130 +1,135 @@
 import React, { useState, useRef } from "react";
-import Sliderf from "../assets/images/Sliders.png";
-import Sliders from "../assets/images/Sliderf.png";
-import Slidert from "../assets/images/Slidert.png";
+import profilef from "../assets/images/profilef.jpeg";
+import profiles from "../assets/images/profiles.jpg";
+import profilet from "../assets/images/profilet.jpg";
+// bg
+import Who_bg_star from "../assets/images/Who_bg_star.png";
+import Who_bg_line from "../assets/images/Who_bg_line.png";
+// bg
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 const Slider = () => {
-  const items = [
+  const [index, setindex] = useState(0);
+  const Prev = () => {
+    setindex((e) => (e === 0 ? 2 : e - 1));
+  };
+  const Next = () => {
+    setindex((e) => (e === 2 ? 0 : e + 1));
+  };
+
+  const content = [
     {
-      image: Sliderf,
-      title: "Backpacks",
-      description: "Durable and stylish backpacks to carry your essentials.",
+      profile: profilef,
+      title: "Jamie R",
+      star: 5,
+      paragraph:
+        "EduMingle transformed my school experience.The backpack is not only stylish but also super functional!",
     },
     {
-      image: Sliders,
-      title: "Stationery",
-      description:
-        "Quality pens, notebooks, and organizers to keep you organized.",
+      profile: profiles,
+      title: "Jamie R",
+      star: 5,
+      paragraph:
+        "EduMingle transformed my school experience.The backpack is not only stylish but also super functional!",
     },
     {
-      image: Slidert,
-      title: "Tech Accessories",
-      description: "Protective sleeves and chargers for your devices.",
+      profile: profilet,
+      title: "Jamie R",
+      star: 5,
+      paragraph:
+        "EduMingle transformed my school experience.The backpack is not only stylish but also super functional!",
     },
   ];
-  const [index, setindex] = useState(0);
-  const [dragging, setDragging] = useState(false);
-  const touchway = (e) => {
-    return e.touches ? e.touches[0].clientX : e.clientX;
-  };
-  const startX = useRef(0);
-  // const offset = useRef(0);
-
-  const Prev = () => {
-    setindex((i) => (i === 0 ? items.length - 1 : i - 1));
-  };
-
-  const Next = () => {
-    setindex((i) => (i === items.length - 1 ? 0 : i + 1));
-  };
-
-  const Down = (e) => {
-    setDragging(true);
-    startX.current = touchway(e);
-  };
-
-  const Move = (e) => {
-    if (!dragging) return;
-
-    let moveX = touchway(e) - startX.current;
-
-    if (moveX > 100) {
-      Prev();
-      setDragging(false);
-    } else if (moveX < -100) {
-      Next();
-      setDragging(false);
-    }
-  };
-
-  const Up = () => {
-    setDragging(false);
-  };
-
   return (
-    <div className="bg-second_yellow lg:flex justify-center items-center">
-      {/* fisrt */}
-      <div className="lg:w-2/5 lg:my-auto font-poppins p-4 md:p-10 space-y-2 sm:space-y-6 ">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10 text-dark">
-          Explore Our Collection
-        </h1>
-        <p className=" text-lg sm:text-2xl lg:text-xs 2xl:text-sm lg:w-4/6 xl:pr-20 ">
-          Designed for Every student
-        </p>
-        <button className=" text-black py-2 px-4 lg:py-3 lg:px-8 rounded-full font-semibold text-lg sm:text-2xl lg:text-sm bg-white">
-          Browse All Product
-          <FontAwesomeIcon icon={faArrowRight} className="pl-2" />
-        </button>
-      </div>
-      {/* second */}
-      <div className="flex  overflow-hidden">
-        {index !== 0 && (
-          <button onClick={Prev}>
-            <FontAwesomeIcon
-              icon={faArrowLeft}
-              className="p-2 sm:p-3 sm:text-2xl bg-dark text-white rounded-s-full lg:rounded-full"
-            />
-          </button>
-        )}
-
-        <div
-          className="overflow-hidden  align-items-center "
-          onMouseDown={Down}
-          onMouseMove={Move}
-          onMouseUp={Up}
-          onTouchStart={Down}
-          onTouchMove={Move}
-          onTouchEnd={Up}
-        >
-          <div
-            className="w-[120%] flex   space-x-10 justify-between my-2 "
-            style={{ transform: `translateX(-${index * 100}%)` }}
-          >
-            {items.map((i) => (
-              <div className="shrink-0 lg:shrink  text-center bg-light rounded-lg p-3 lg:p-3 sm:p-6 w-6/12">
-                <img
-                  src={i.image}
-                  className="bg-low_light   h-64 sm:h-96 lg:h-40  w-full m-auto rounded-md p-4"
+    <div>
+      {/* <h1>What Our Customers Say</h1>
+      <div className="w-96 h-96 overflow-hidden ">
+        <div style={{ transform: `translateY(-${index * 384}px)` }}>
+          {content.map((v, indx) => (
+            <div key={indx}>
+              <img src={v.profile} />
+              <h2>{v.title}</h2>
+              {[...Array(v.star)].map((_, i) => (
+                <FontAwesomeIcon
+                  icon={faStar}
+                  key={i}
+                  className="text-yellow-400"
                 />
-                <h2 className=" mt-2 text-2xl sm:text-5xl md:text-6xl lg:text-2xl  2xl:text-4xl font-prompt font-extrabold 2xl:space-y-10 ">
-                  {i.title}
-                </h2>
-                <p className=" text-lg sm:text-2xl lg:text-xs 2xl:text-sm  ">
-                  {i.description}
-                </p>
+              ))}
+              <h2>{v.paragraph}</h2>
+            </div>
+          ))}
+        </div>{" "}
+      </div>
+      <button onClick={Prev}>Prev</button>
+      <button onClick={Next}>Next</button>
+      {content.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => setindex(i)}
+          className={`w-3 h-3 rounded-full ${
+            index === i ? "bg-black" : "bg-gray-400"
+          }`}
+        ></button>
+      ))} */}
+      {/* background  */}
+      <div className="relative p-5 lg:py-20 container mx-auto">
+        <div className=" relative text-center z-10 space-y-2 xl:space-y-5  lg:w-4/6 xl:w-9/12 mx-auto  ">
+          {/* <div class="flex justify-center items-center gap-6 mt-4"></div> */}
+          <div className="">
+            <h1 className="text-dark text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold">
+              What Our Customers Say
+            </h1>
+            <div className=" h-80 overflow-hidden bg-red-300 mx-auto">
+              <div style={{ transform: `translateY(-${index * 384}px)` }}>
+                {content.map((v, indx) => (
+                  <div key={indx}>
+                    <img src={v.profile} className="h-20 w-20 object-cover rounded" />
+                    <h2>{v.title}</h2>
+                    {[...Array(v.star)].map((_, i) => (
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        key={i}
+                        className="text-yellow-400"
+                      />
+                    ))}
+                    <h2>{v.paragraph}</h2>
+                  </div>
+                ))}
               </div>
+            </div>
+            <button onClick={Prev}>Prev</button>
+            <button onClick={Next}>Next</button>
+            {content.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setindex(i)}
+                className={`w-3 h-3 rounded-full ${
+                  index === i ? "bg-black" : "bg-gray-400"
+                }`}
+              ></button>
             ))}
           </div>
         </div>
-        {index !== items.length - 1 && (
-          <button onClick={Next}>
-            <FontAwesomeIcon
-              icon={faArrowRight}
-              className="p-2 sm:p-3 sm:text-2xl bg-dark text-white rounded-e-full  lg:rounded-full"
-            />
-          </button>
-        )}
+        <div className="flex top-20 ">
+          <img
+            src={Who_bg_line}
+            className="absolute top-12 xl:top-20 lg:left-20 h-2 w-20 rotate-12 xl:rotate-0 "
+          />
+          <img
+            src={Who_bg_star}
+            className="absolute top-1/4 lg:top-10 right-0
+          xl:top-16 xl:right-60 h-8 w-8 xl:h-6 xl:w-6"
+          />
+          <img
+            src={Who_bg_star}
+            className="absolute top-2/4 left-5 lg:right-28 xl:top-24 xl:left-56 xl:h-8 xl:w-8 h-6 w-6 bg"
+          />
+          <img
+            src={Who_bg_line}
+            className="absolute right-20 h-2 w-10 -rotate-12 xl:rotate-0 xl:w-20 xl:top-2/4 xl:right-12 2xl:top-36 "
+          />
+        </div>
       </div>
     </div>
   );
