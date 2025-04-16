@@ -7,7 +7,11 @@ import profilet from "../assets/images/profilet.jpg";
 import Who_bg_star from "../assets/images/Who_bg_star.png";
 import Who_bg_line from "../assets/images/Who_bg_line.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faArrowRight,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Slider = () => {
   const carouselRef = useRef(null);
@@ -32,18 +36,29 @@ const Slider = () => {
       profile: profilet,
       title: "Chris L",
       star: 5,
-      paragraph:
-        "Super functional and trendy. It fits all my stuff with ease.",
+      paragraph: "Super functional and trendy. It fits all my stuff with ease.",
     },
   ];
 
   return (
     <div className="relative container mx-auto py-16 px-4 select-none">
       {/* Background Decorations */}
-      <img src={Who_bg_line} className="absolute top-12 xl:top-20 lg:left-20 h-2 w-20 rotate-12 xl:rotate-0" />
-      <img src={Who_bg_star} className="absolute top-1/4 lg:top-10 right-0 xl:top-16 xl:right-60 h-8 w-8 xl:h-6 xl:w-6" />
-      <img src={Who_bg_star} className="absolute top-2/4 left-5 xl:top-24 xl:left-56 h-6 w-6 xl:h-8 xl:w-8" />
-      <img src={Who_bg_line} className="absolute right-20 h-2 w-10 -rotate-12 xl:rotate-0 xl:w-20 xl:top-2/4 xl:right-12" />
+      <img
+        src={Who_bg_line}
+        className="absolute top-12 xl:top-20 lg:left-20 h-2 w-20 rotate-12 xl:rotate-0"
+      />
+      <img
+        src={Who_bg_star}
+        className="absolute top-1/4 lg:top-10 right-0 xl:top-16 xl:right-60 h-8 w-8 xl:h-6 xl:w-6"
+      />
+      <img
+        src={Who_bg_star}
+        className="absolute top-2/4 left-5 xl:top-24 xl:left-56 h-6 w-6 xl:h-8 xl:w-8"
+      />
+      <img
+        src={Who_bg_line}
+        className="absolute right-20 h-2 w-10 -rotate-12 xl:rotate-0 xl:w-20 xl:top-2/4 xl:right-12"
+      />
 
       <h2 className="text-center text-3xl sm:text-4xl font-bold mb-12 text-gray-800">
         What Our Customers Say
@@ -54,6 +69,26 @@ const Slider = () => {
         {/* Carousel */}
         <div className="w-full max-w-md min-h-[350px] overflow-hidden">
           <Carousel
+            renderArrowPrev={(clickHandler, hasPrev, label) =>
+              hasPrev && (
+                <button onClick={clickHandler}>
+                  <FontAwesomeIcon
+                    icon={faArrowLeft}
+                    className="text-black text-xl"
+                  />
+                </button>
+              )
+            }
+            renderArrowNext={(clickHandler, hasNext, label) =>
+              hasNext && (
+                <button onClick={clickHandler}>
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="text-black text-xl"
+                  />
+                </button>
+              )
+            }
             ref={carouselRef}
             showThumbs={false}
             showStatus={false}
@@ -78,7 +113,9 @@ const Slider = () => {
                   className="h-24 !w-24 object-cover rounded-full border-4 border-yellow-400 mx-auto"
                   alt={item.title}
                 />
-                <h3 className="text-lg font-semibold text-gray-800">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {item.title}
+                </h3>
                 <div className="flex justify-center">
                   {[...Array(item.star)].map((_, i) => (
                     <FontAwesomeIcon
