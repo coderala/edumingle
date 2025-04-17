@@ -12,12 +12,20 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.carousel.carousel-slider .control-next {
-  background: blueviolet;
+.control-dots {
+  position: absolute;
+  top: 32%;
+  left: -25%;
+  /* list-style-type: none; */
+  /* background: #b3ff26; */
+  width: 120px !important;
+  height: 100px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  transform: rotate(90deg);
+  /* transform-origin: center; */
 }
-.carousel.carousel-slider .control-prev {
-  background: blueviolet;
-}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
