@@ -6,7 +6,7 @@ const Have = () => {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="container mx-auto my-5 flex flex-col space-y-2 lg:space-y-5">
+    <div className="container mx-auto py-6 px-3 flex flex-col space-y-4 lg:space-y-5">
       <h1 className=" text-dark text-3xl text-center sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold ">
         Have Questions?
       </h1>

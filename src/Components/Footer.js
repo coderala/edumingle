@@ -17,7 +17,7 @@ const Footer = () => {
         <li>Terms of Service</li>
       </ul>
 
-      <div className="flex gap-6 text-2xl text-white">
+      <div className="flex flex-col gap-6 text-2xl text-white">
         <FontAwesomeIcon icon={faFacebookF} className="" />
         <FontAwesomeIcon icon={faInstagram} className="" />
         <FontAwesomeIcon icon={faTwitter} className="" />

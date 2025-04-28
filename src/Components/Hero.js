@@ -6,9 +6,9 @@ const Hero = () => {
   return (
     <section className="container mx-auto">
       {/* parent div  */}
-      <div className="bg-light  rounded-s-lg rounded-r-lg mt-3 lg:mt-7 text-center lg:text-start lg:flex lg:p-5 2xl:p-10">
+      <div className="bg-light  rounded-s-lg rounded-r-lg mt-3 lg:mt-7 text-center lg:text-start lg:flex py-6 px-5 lg:p-5 2xl:p-10">
         {/* first Div */}
-        <div className="lg:w-2/4 lg:my-auto font-poppins p-4 md:p-10 space-y-2 sm:space-y-6 ">
+        <div className="lg:w-2/4 lg:my-auto font-poppins md:p-10 space-y-4 sm:space-y-6 ">
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10 ">
             Unlock Your Potential with EduMingle
           </h1>
@@ -21,8 +21,8 @@ const Hero = () => {
           </button>
         </div>
         {/* second Div */}
-        <div className="lg:w-2/4 d-flex justify-center  lg:py-10">
-          <img className="w-3/4 lg:w-auto" src={Hero_img} />
+        <div className="lg:w-2/4 d-flex justify-center items-center  lg:py-10 mt-5">
+          <img className="w-3/4 lg:w-auto m-auto" src={Hero_img} />
         </div>
       </div>
     </section>

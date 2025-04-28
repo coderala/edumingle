@@ -40,6 +40,18 @@
 body {
   background: #fff8f8;
 }
+@media (min-width: 640px) {
+  .control-dots {
+    left: -58px;
+  }
+}
+@media (min-width: 1024px) {
+  .control-dots {
+    left: 50px;
+  }
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
