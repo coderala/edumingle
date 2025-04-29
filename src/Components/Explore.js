@@ -63,7 +63,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="bg-second_yellow lg:flex justify-center items-center py-6 px-3">
+    <div className="bg-second_yellow lg:flex justify-center items-center py-6 px-3 container mx-auto">
       {/* fisrt */}
       <div className="lg:w-2/5 lg:my-auto font-poppins md:p-10 space-y-4 sm:space-y-6 ">
         <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold 2xl:space-y-10 text-dark">

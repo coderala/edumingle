@@ -55,19 +55,19 @@ const Slider = () => {
         />
         <img
           src={Who_bg_star}
-          className="absolute top-2/4 left-10 xl:top-24 xl:left-56 h-6 w-6 xl:h-8 xl:w-8 md:top-20 md:left-20"
+          className="absolute top-2/4 left-10 xl:top-24 xl:left-56 h-6 w-6 xl:h-8 xl:w-8 lg:top-20 md:left-20"
         />
         <img
           src={Who_bg_line}
-          className="absolute right-20 h-2 w-10 md:w-20 -rotate-12 xl:w-20 xl:top-2/4 xl:right-12 md:rotate-0 sm:top-20 md:right-0"
+          className="absolute right-20 h-2 w-10 md:w-20 -rotate-12 xl:w-20 xl:top-1/4 xl:right-32 lg:rotate-0 sm:top-20 md:right-0"
         />
         <img
           src={quote}
-          className="absolute md:left-28 left-12 lg:left-1/4 bottom-1/4 h-10 w-16  md:w-28 md:h-20  xl:w-32 xl:h-20 -rotate-180"
+          className="absolute md:left-28 left-12 lg:left-1/4 bottom-1/4 h-10 w-16  md:w-28 md:h-20  xl:w-32 xl:h-20 -rotate-180 xl:left-60"
         />
         <img
           src={quote}
-          className="absolute bottom-16 right-24 md:right-24 lg:right-1/4  h-10 w-16  md:w-28  md:h-20 xl:w-32 xl:h-20"
+          className="absolute bottom-16 right-24 md:right-24 lg:right-1/4  h-10 w-16  md:w-28  md:h-20 xl:w-32 xl:h-20 xl:bottom-36"
         />
 
         <h2 className="text-center text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-prompt font-extrabold text-dark">
