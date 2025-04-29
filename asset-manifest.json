@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/edumingle/static/css/main.50d6435e.css",
+    "main.js": "/edumingle/static/js/main.3731f3bb.js",
+    "static/js/453.5d51d9e5.chunk.js": "/edumingle/static/js/453.5d51d9e5.chunk.js",
+    "static/media/Hero_img.png": "/edumingle/static/media/Hero_img.0110027133780d3683e1.png",
+    "static/media/profilet.jpg": "/edumingle/static/media/profilet.5d5dacd0d25c40bb6096.jpg",
+    "static/media/profilef.jpeg": "/edumingle/static/media/profilef.626994731f735237a22b.jpeg",
+    "static/media/Slidert.png": "/edumingle/static/media/Slidert.773d0e2724fbd6ca26f6.png",
+    "static/media/Sliders.png": "/edumingle/static/media/Sliders.fdc2e7ae1a570a277a27.png",
+    "static/media/Sliderf.png": "/edumingle/static/media/Sliderf.5a2351dada9df51a58af.png",
+    "static/media/Frame.png": "/edumingle/static/media/Frame.7422bb5bdc5888aff40a.png",
+    "static/media/profiles.jpg": "/edumingle/static/media/profiles.e73cf2b40f4ad1cd422e.jpg",
+    "index.html": "/edumingle/index.html",
+    "main.50d6435e.css.map": "/edumingle/static/css/main.50d6435e.css.map",
+    "main.3731f3bb.js.map": "/edumingle/static/js/main.3731f3bb.js.map",
+    "453.5d51d9e5.chunk.js.map": "/edumingle/static/js/453.5d51d9e5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.50d6435e.css",
+    "static/js/main.3731f3bb.js"
+  ]
+}
